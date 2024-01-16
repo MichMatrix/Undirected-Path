@@ -3,6 +3,17 @@ const edges = [['a', 'b'], ['b', 'c'], ['b', 'd'], ['c', 'e'], ['k', 'h']];
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+// Function to visualize a non-directed graph based on the provided edges
+const visualizeGraph = (edges) => {
+    // Get the graph container from the DOM
+    const container = document.getElementById('graph-container');
+    // Iterate over edges to visualize nodes and edges in the graph
+    for (let [a, b] of edges) {
+        visualizeNode(a);
+        visualizeEdge(a, b);
+        visualizeNode(b);
+    }
+}
 
 
 // Asynchronous function to check if a path exists between source (src) and destination (dst) nodes in a graph
