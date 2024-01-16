@@ -43,6 +43,16 @@ const buildGraph = (edges) => {
     return graph;
 }
 
+// Function to convert edges to edge pairs
+const getEdgePairs = (edges) => {
+    const edgePairs = [];
+
+    // Iterate over edges to create edge pairs
+    for (let [a, b] of edges) {
+        edgePairs.push([a, b]);
+    }
+    return edgePairs;
+}
 
 // function to be called when the runPath button is clicked
 async function runPath() {
