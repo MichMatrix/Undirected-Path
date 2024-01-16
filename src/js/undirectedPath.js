@@ -5,7 +5,37 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 
 
+// Asynchronous function to check if a path exists between source (src) and destination (dst) nodes in a graph
+const hasPath = async (graph, src, dst, visited = new Set()) => {
+    // Base case: source equals destination, there is a path
+    if (src === dst) return true;
 
+    // Mark the current node as visited and highlight it
+    visited.add(src);
+    visualizeNode(src, 'highlight');
+
+    // Introduce a delay for visualization
+    await delay(1000);
+
+    // Iterate over neighbors of the current node
+    for (let neighbor of graph[src]) {
+        // Highlight the edge to the neighbor
+        visualizeEdge(src, neighbor, 'highlight');
+
+        // Recursively check for a path from the neighbor to the destination
+        if (!visited.has(neighbor) && await hasPath(graph, neighbor, dst, visited)) {
+            return true;
+        }
+        // Remove the highlight from the edge after checking
+        visualizeEdge(src, neighbor);
+    }
+
+    // Remove the highlight from the edge after checking
+    visualizeNode(src);
+
+    // If no path is found from this node, return false
+    return false;
+};
 
 // Function to visualize a node in the graph with an optional CSS class
 const visualizeNode = (node, className = '') => {
