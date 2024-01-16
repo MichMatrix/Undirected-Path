@@ -15,7 +15,13 @@ const visualizeNode = (node, className = '') => {
     document.getElementById('graph-container-node').appendChild(nodeElement);
 }
 
-
+// Function to visualize an edge between nodes with an optional CSS class
+const visualizeEdge = (nodeA, nodeB, className = '') => {
+    const edgeElement = document.createElement('div');
+    edgeElement.className = `edge ${className}`; // Include the 'edge' class
+    edgeElement.innerHTML = '&nbsp;'; // Add a non-breaking space as content
+    document.getElementById('graph-container-node').appendChild(edgeElement);
+}
 
 // Function to build a graph from the provided edges
 const buildGraph = (edges) => {
