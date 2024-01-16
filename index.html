@@ -20,7 +20,49 @@
             </div>
         </section>
     </header>
+    <main>
+        <section class="input-data-section">
+            <div id="data-input">
+                <h3>Data Input</h3>
+                <p>
+                    Graph [['a', 'b'], ['b', 'c'], ['b', 'd'], ['c', 'e'], ['k', 'h']];<br>
+                    For instance, type from node: <strong>a</strong> to node: <strong>c</strong>;
+                </p>
+            </div>
+        </section>
+        <section>
+            <form id="pathForm">
+                <div class="form-info">
+                    <div>
+                        <label for="nodeA"><strong>From node</strong></label>
+                        <input type="text" id="nodeA" name="nodeA" required>
+                    </div>
+                    <div>
+                        <label for="nodeB"><strong>To node</strong></label>
+                        <input type="text" id="nodeB" name="nodeB" required>
+                    </div>
+                </div>
+                <div class="buttons-pathForm-container">
+                    <button type="button" id="runPathBtn" onclick="runPath()">Run</button>
+                    <button type="button" onclick="clearGraph()">Clear</button>
+                </div>
 
+                <div class="spinner" id="spinner"></div>
+            </form>
+            <div>
+                <p><strong>GRAPH REPRESENTATION</strong></p><br>
+                <div id="graph-container-node"></div>
+                <br><br>
+                <div id="graph-container"></div>
+                <br>
+                <div id="if-graph-end-true"></div>
+                <br>
+                <strong><p id="result"></p></strong>
+            </div>
+
+        </section>
+
+    </main>
 
 
 </body>
