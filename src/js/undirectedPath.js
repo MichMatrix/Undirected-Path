@@ -3,6 +3,10 @@ const edges = [['a', 'b'], ['b', 'c'], ['b', 'd'], ['c', 'e'], ['k', 'h']];
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+
+
+
+
 // Function to visualize a node in the graph with an optional CSS class
 const visualizeNode = (node, className = '') => {
     const nodeElement = document.createElement('div');
@@ -11,7 +15,27 @@ const visualizeNode = (node, className = '') => {
     document.getElementById('graph-container-node').appendChild(nodeElement);
 }
 
-// Function to visualize an edge between nodes with an optional CSS class
+
+
+// Function to build a graph from the provided edges
+const buildGraph = (edges) => {
+    const graph = {};
+
+    // Iterate over edges to build the graph
+    for (let edge of edges) {
+        const [a, b] = edge;
+
+        // Initialize nodes in the graph if not present
+        if (!(a in graph)) graph[a] = [];
+        if (!(b in graph)) graph[b] = [];
+
+        // Add edges to the graph
+        graph[a].push(b);
+        graph[b].push(a);
+    }
+
+    return graph;
+}
 
 
 // function to be called when the runPath button is clicked
@@ -66,4 +90,13 @@ function clearGraph() {
     // Clear the nodeA and nodeB inputs
     document.getElementById('nodeA').value = '';
     document.getElementById('nodeB').value = '';
+}
+
+function toggleAnswer(questionId) {
+    const answer = document.getElementById(questionId);
+    if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+    } else {
+        answer.style.display = 'block';
+    }
 }
