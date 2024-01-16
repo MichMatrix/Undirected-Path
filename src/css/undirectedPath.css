@@ -230,3 +230,39 @@ form button:hover {
     }
 }
 
+/*FAQ Section*/
+#Faq-section {
+    width: 64vh;
+}
+
+.faq-item {
+    margin: 15px;
+    cursor: pointer;
+    background-color: #707980;
+    padding: 5px 15px;
+}
+
+.faq-item img {
+    display: flex;
+    width: 16px;
+}
+
+.faq-item h4 {
+    margin: 10px 0;
+}
+
+.faq-item a {
+    color:#1e5b84;
+}
+
+.answer {
+    display: none;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.questions {
+    display: flex;
+    justify-content: space-between;
+}
+
