@@ -3,6 +3,14 @@ const edges = [['a', 'b'], ['b', 'c'], ['b', 'd'], ['c', 'e'], ['k', 'h']];
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+// Function to visualize a node in the graph with an optional CSS class
+const visualizeNode = (node, className = '') => {
+    const nodeElement = document.createElement('div');
+    nodeElement.className = `node ${className}`;
+    nodeElement.textContent = node;
+    document.getElementById('graph-container-node').appendChild(nodeElement);
+}
+
 // Function to visualize an edge between nodes with an optional CSS class
 
 
