@@ -15,6 +15,25 @@ const visualizeGraph = (edges) => {
     }
 }
 
+// Asynchronous function to visualize the graph and check for the existence of a path between two nodes
+const undirectedPath = async (nodeA, nodeB) => {
+    // Visualize the graph before performing the path check
+    visualizeGraph(edges);
+
+    // Build the graph based on the provided edges
+    const graph = buildGraph(edges);
+
+    // Await the asynchronous path check between nodeA and nodeB
+    const result = await hasPath(graph, nodeA, nodeB);
+
+    // Update the HTML element content with the path check results
+    document.getElementById('result').textContent = `Path from ${nodeA} to ${nodeB}: ${result}`;
+
+    // If there is a path, display an additional message
+    if (result) {
+        document.getElementById('if-graph-end-true').textContent = `YOU GOT ARRIVE TO ${nodeB}`;
+    }
+}
 
 // Asynchronous function to check if a path exists between source (src) and destination (dst) nodes in a graph
 const hasPath = async (graph, src, dst, visited = new Set()) => {
