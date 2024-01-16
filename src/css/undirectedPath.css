@@ -15,3 +15,64 @@ body a {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+/*header*/
+
+header {
+    margin: 0;
+}
+
+header h1 {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.858);
+    border-radius: 0 0 10px 10px;
+    color: rgb(225, 225, 225);
+    padding: 5vh 7vh;
+    margin: 0 0 20px 0;
+    font-size: 2em;
+}
+
+header section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1f3f83;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px 45px;
+    border:#33353d solid 2px;
+}
+
+header img{
+    display: flex;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: black solid 4px;
+}
+
+header p {
+    font-weight: 600 ;
+    color: #fefefe;
+    margin: 5px;
+}
+
+header .bio-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.bio-text a {
+    color:#cad4ff;
+}
