@@ -49,3 +49,13 @@ async function runPath() {
     spinner.style.display = 'none';
     button.disabled = false;
 }
+
+function clearGraph() {
+    // Clear the graph container nodes and edges
+    document.getElementById('graph-container-node').innerHTML = '';
+    document.getElementById('graph-container').innerHTML = '';
+
+    // Clear the nodeA and nodeB inputs
+    document.getElementById('nodeA').value = '';
+    document.getElementById('nodeB').value = '';
+}
